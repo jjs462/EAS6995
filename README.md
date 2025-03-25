@@ -3,9 +3,13 @@
 - Check your ‘Project Activity’ - your GPU usage (core hours)- this may only update once a day
 - Our S2025 EAS 6995 class project code: UCOR 0090
 **Log in to derecho using terminal and ssh by opening your terminal and typing:**
+  
 ssh -Y username@derecho.hpc.ucar.edu 
+
 or: 
+
 ssh username@derecho.hpc.ucar.edu ssh jessicasmith@casper.hpc.ucar.edu
+
 - The first one with the -Y didn’t work for me: I had to remove it
 - username is jessicasmith
 - Sometimes it didn’t accept my password even though it was correct
@@ -17,11 +21,15 @@ ssh username@derecho.hpc.ucar.edu ssh jessicasmith@casper.hpc.ucar.edu
 - Click ‘start’ under the ‘actions’ tab
 - You can upload current files from your computer by clicking the small upward arrow button
 - Pytorch was not loading in the original kernel (or conda), but when entering the commands below into a new Jupyter Terminal then selecting the new kernel, it worked. 
-module load conda                                                                                                          
+
+module load conda
+
 conda create -n torch_env python=3.10 pytorch torchvision torchaudio cpuonly -c pytorch -y
+
 conda install ipykernel -y
--To upload files: scp local_file username@derecho.hpc.ucar.edu:/path/to/hpc/folder
--To download files: scp username@derecho.hpc.ucar.edu:/path/to/hpc/folder local_file
+
+- To upload files: scp local_file username@derecho.hpc.ucar.edu:/path/to/hpc/folder
+- To download files: scp username@derecho.hpc.ucar.edu:/path/to/hpc/folder local_file
 **You can have a similar set up on VSCode:**
 - Connect Visual Studio Code to NCAR HPC systems using the Remote SSH extension: https://code.visualstudio.com/docs/remote/ssh 
 **Monitor jobs:**
