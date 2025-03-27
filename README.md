@@ -19,15 +19,15 @@ ssh username@derecho.hpc.ucar.edu ssh jessicasmith@casper.hpc.ucar.edu
 - Make sure you're in the correct directory: **/glade/work/jessicasmith/eas6995**
 - To make a file (.pbs) and submit it as a job then check on it (using casper):
     - vim simple_job.pbs: type i to get into edit mode
-      #!/bin/bash
-      #PBS -N SimpleJob
-      #PBS -l select=1:ncpus=1:mem=4GB
-      #PBS -l walltime=00:30:00
-      #PBS -j oe
-      #PBS -A UCOR0090
-      #PBS -q casper
-      module load conda
-      python my_awesome_script.py
+        - #!/bin/bash
+        - #PBS -N SimpleJob
+        - #PBS -l select=1:ncpus=1:mem=4GB
+        - #PBS -l walltime=00:30:00
+        - #PBS -j oe
+        - #PBS -A UCOR0090
+        - #PBS -q casper
+        - module load conda
+        - python my_awesome_script.py
     - Esc :wq (saves and quits)
     - Run using this command: qsub simple_job.pbs
     - Check on the job with this: qstat -u jessicasmith
